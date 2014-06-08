@@ -1,17 +1,14 @@
-<h2>Hello World! It's TIQ-TAK-TOW!</h2>
+<div ng-controller="GameController">
+	<h2>Hello World! It's TIQ-TAK-TOW!</h2>
 
-<div>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-</div>
-<div>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-</div>
-<div>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
-<canvas width ="50" height = "50" style="border:2px solid gray"></canvas>
+	<h2>{{message}}</h2> 
+	<button ng-show="checkWinner()" ng-click="newGame()" >New Game</button>
+
+	<div id="game">
+		<table border="1">
+	    <tr ng-repeat="row in [0,1,2]">
+	        <td class="tac-text" ng-repeat="column in [0,1,2]" ng-click="cellClick(row,column)">{{cellData[row][column]}}</td>
+	    </tr>
+	   </table>
+	</div>
 </div>
